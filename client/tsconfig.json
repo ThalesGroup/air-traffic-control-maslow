@@ -1,0 +1,26 @@
+{
+    
+    "compilerOptions": {
+        "incremental": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "target": "es5",
+        "jsx": "react",
+        "moduleResolution": "node",
+        "strictNullChecks": false,
+        "lib": [
+            "es2017",
+            "dom"
+        ],
+        "baseUrl": "./src/",
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "strict": false,
+        "module": "esnext",
+        "experimentalDecorators": true,
+        "checkJs": false
+    },
+    "exclude": [
+        "src/electron"
+    ]
+}

@@ -1,0 +1,26 @@
+0 silly argv {
+0 silly argv   _: [ 'exec' ],
+0 silly argv   parallel: true,
+0 silly argv   args: [],
+0 silly argv   '--': [ 'yarn', 'start' ],
+0 silly argv   lernaVersion: '3.20.2',
+0 silly argv   '$0': '/Users/areskihadjaz/Projects/maslow/node_modules/.bin/lerna'
+0 silly argv }
+1 notice cli v3.20.2
+2 verbose rootPath /Users/areskihadjaz/Projects/maslow
+3 info Executing command in 2 packages: "yarn start"
+4 error Error: Command failed: yarn start
+4 error warning ../package.json: No license field
+4 error
+4 error webpack is watching the files…
+4 error
+4 error
+4 error $ rm -rf dist && webpack --mode=development --watch --display minimal
+4 error tsconfig-paths-webpack-plugin: Using config file at /Users/areskihadjaz/Projects/maslow/client/tsconfig.json
+4 error Live Reload listening on port 35729
+4 error
+4 error ℹ ｢atl｣: Using typescript@3.9.7 from typescript
+4 error ℹ ｢atl｣: Using tsconfig.json from /Users/areskihadjaz/Projects/maslow/client/tsconfig.json
+4 error
+4 error     at makeError (/Users/areskihadjaz/Projects/maslow/node_modules/execa/index.js:174:9)
+4 error     at /Users/areskihadjaz/Projects/maslow/node_modules/execa/index.js:278:16

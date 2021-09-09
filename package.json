@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@turf/turf": "^6.5.0",
+    "lerna": "^3.20.2",
+    "node": "^13.11.0",
+    "react": "^17.0.2"
+  },
+  "scripts": {
+    "start": "lerna exec --parallel -- yarn start",
+    "build": "lerna run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

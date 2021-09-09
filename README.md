@@ -1,46 +1,30 @@
-# Thales Open Source Template Project
+# The MasLow Project
+The idea of getting everyone talking and building an Air Traffic Control platform from the ground up by and for air traffic controllers (ATCO) could be game changing in aviation industry. MasLow is an Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. Join the movement.
+This repository contains the basic features used by an air traffic controller. 
 
-Template for creating a new project in the [Thales GitHub organization](https://github.com/ThalesGroup). 
+## Repository structure
+Client Side:
+- /client: this directory contains the react client side (front-end)
+- /client/src/App/conf.json: this file contains parameters to update including MapBox Token (Get it for free from https://account.mapbox.com/)
 
-Each Thales OSS project repository **MUST** contain the following files at the root:
+Server Side:
+- /server: this directory contains the nodejs server side (back-end)
+- /server/config/conf.json: this file contains the path and credentials to access Aviation Data Services (Real Time Aircraft Tracks and Flight Plans)
+"avdClientId": "<THALES_AVIATION_DATA_CLIENT_ID>",
+"avdClientSecret": "<THALES_AVIATION_DATA_CLIENT_SECRET>"
 
-- a `LICENSE` which has been chosen in accordance with legal department depending on your needs 
+Please contact: areski.hadjaz@thalesdigital.io to get data access.
 
-- a `README.md` outlining the project goals, sponsoring sig, and community contact information, [GitHub tips about README.md](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes)
+## Installation
+- Clone the repository
+- Make 'yarn install' in client and server folder (./install.sh)
+- Fill the credentials (MapBox Token (/client/src/App/conf.json) and Tracks and Flight Plans AVD Feeder (/server/config/conf.json)
+- Launch ./start-dev.sh
 
-- a `CONTRIBUTING.md` outlining how to contribute to the project, how to submit a pull request and an issue
+## Questions?
+In case of MasLow related questions:
+- Have a look at the live ATC Platform https://air-traffic-control.io
+- Contact me
+  - Email: [areski.hadjaz@thalesdigital.io](mailto:areski.hadjaz@thalesdigital.io)
+  - LinkedIn: https://www.linkedin.com/in/areskihadjaz/ 
 
-- a `SECURITY.md` outlining how the security concerns are handled, [GitHub tips about SECURITY.md](https://docs.github.com/en/github/managing-security-vulnerabilities/adding-a-security-policy-to-your-repository)
-
-Below is an example of the common structure and information expected in a README.
-
-**Please keep this structure as is and only fill the content for each section according to your project.**
-
-If you need assistance or have question, please contact oss@thalesgroup.com 
-
-
-
-## Get started
-
-XXX project purpose it to ...
-
-**Please also add the description into the About section (Description field)**
-
-## Documentation
-
-Documentation is available at [xxx/docs](https://xxx/docs/).
-
-You can use [GitHub pages](https://guides.github.com/features/pages/) to create your documentation.
-
-See an example here : https://github.com/ThalesGroup/ThalesGroup.github.io
-
-**Please also add the documentation URL into the About section (Website field)**
-
-## Contributing
-
-If you are interested in contributing to the XXX project, start by reading the [Contributing guide](/CONTRIBUTING.md).
-
-## License
-
-The chosen license in accordance with legal department must be defined into an explicit [LICENSE](https://github.com/ThalesGroup/template-project/blob/master/LICENSE) file at the root of the repository
-You can also link this file in this README section.

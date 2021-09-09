@@ -1,5 +1,3 @@
-Describe here all the security policies in place on this repository to help your contributors to handle security issues efficiently.
-
 ## Goods practices to follow
 
 :warning:**You must never store credentials information into source code or config file in a GitHub repository** 

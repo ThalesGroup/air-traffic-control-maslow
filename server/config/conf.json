@@ -1,0 +1,12 @@
+{
+    "appName": "Air-Traffic-Control.io",
+    "url": "https://air-traffic-control.io",
+    "avdTokenPath": "https://idp.ams.thalesdigital.io/auth/realms/AMS/protocol/openid-connect/token",
+    "avdClientId": "<THALES_AVIATION_DATA_CLIENT_ID>",
+    "avdClientSecret": "<THALES_AVIATION_DATA_CLIENT_SECRET>",
+    "avdHost": "api.avd.apps.thalesdigital.io",
+    "avdTracksPath": "/air-situation/api/0/tracks/FR24",
+    "avdFPLPath": "/flights/api/v1/flight-data/NMPREOPS/"
+}
+
+
