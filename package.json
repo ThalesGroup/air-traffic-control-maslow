@@ -1,9 +1,24 @@
 {
   "dependencies": {
     "@turf/turf": "^6.5.0",
+    "dot-prop": "^6.0.1",
+    "glob-parent": "^6.0.1",
+    "handlebars": "^4.7.7",
+    "hosted-git-info": "^4.0.2",
+    "ini": "^2.0.0",
     "lerna": "^3.20.2",
+    "lodash": "^4.17.21",
+    "minimist": "^1.2.5",
     "node": "^13.11.0",
-    "react": "^17.0.2"
+    "node-fetch": "^3.0.0",
+    "path-parse": "^1.0.7",
+    "react": "^17.0.2",
+    "ssri": "^8.0.1",
+    "tar": "^6.1.11",
+    "trim-newlines": "^4.0.2",
+    "trim-off-newlines": "^1.0.1",
+    "y18n": "^5.0.8",
+    "yargs-parser": "^20.2.9"
   },
   "scripts": {
     "start": "lerna exec --parallel -- yarn start",
