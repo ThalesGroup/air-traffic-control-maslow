@@ -281,7 +281,7 @@ background-color:rgba(0,0,0,0.6);
 align-items: center;
 justify-content: center;
 text-align:center;
-width:460px;
+width:460px; 
 @media (max-width: 400px) {
   width:80%;
 }
