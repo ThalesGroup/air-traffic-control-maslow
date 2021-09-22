@@ -7,6 +7,22 @@ The idea of getting everyone talking and building an Air Traffic Control platfor
      
 **MasLow** is the foundation on which https://air-traffic-control.io is built. An Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. 
 
+Special Thx to the involved ATCOs:
+Luis Barbero
+Pavol Sitar
+Tom Laursen
+Anthony Ang
+Nadia Bamowongo
+Angel Augusto
+Anicet Coffie
+Jasser Letaief
+Timothy Agaba
+Kijeon
+Navneet Singh Rana
+Ivan Radović
+Osman Atilla Altintas
+...
+
 Join the movement.
 
 This repository contains the basic features used by an air traffic controller. 
