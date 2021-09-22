@@ -1,7 +1,11 @@
 # The MasLow Project
 The idea of getting everyone talking and building an Air Traffic Control platform from the ground up by and for air traffic controllers (ATCO) could be game changing in aviation industry. 
 
-**MasLow** is an Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. 
+<img src="client/resources/Thumbnail.jpg"
+     alt="Markdown Monster icon"
+     style="float: left; margin-right: 10px;" />
+     
+**MasLow** is the foundation on which https://air-traffic-control.io is built. An Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. 
 
 Join the movement.
 
