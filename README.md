@@ -1,5 +1,10 @@
 # The MasLow Project
-The idea of getting everyone talking and building an Air Traffic Control platform from the ground up by and for air traffic controllers (ATCO) could be game changing in aviation industry. MasLow is an Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. Join the movement.
+The idea of getting everyone talking and building an Air Traffic Control platform from the ground up by and for air traffic controllers (ATCO) could be game changing in aviation industry. 
+
+**MasLow** is an Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. 
+
+Join the movement.
+
 This repository contains the basic features used by an air traffic controller. 
 
 ## Repository structure
@@ -17,9 +22,9 @@ Please contact: areski.hadjaz@thalesdigital.io to get data access.
 
 ## Installation
 - Clone the repository
-- Make 'yarn install' in client and server folder (./install.sh)
+- Run `yarn install` in client and server folder (`./install.sh`)
 - Fill the credentials (MapBox Token (/client/src/App/conf.json) and Tracks and Flight Plans AVD Feeder (/server/config/conf.json)
-- Launch ./start-dev.sh
+- Launch `./start-dev.sh`
 
 ## Questions?
 In case of MasLow related questions:
