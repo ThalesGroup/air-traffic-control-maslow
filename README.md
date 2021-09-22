@@ -8,21 +8,7 @@ The idea of getting everyone talking and building an Air Traffic Control platfor
 **MasLow** is the foundation on which https://air-traffic-control.io is built. An Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. 
 
 
-Special Thx to ATCOs from all over the world:
-Luis Barbero
-Pavol Sitar
-Tom Laursen
-Anthony Ang
-Nadia Bamowongo
-Angel Augusto
-Anicet Coffie
-Jasser Letaief
-Timothy Agaba
-Kijeon
-Navneet Singh Rana
-Ivan Radović
-Osman Atilla Altintas
-...
+Special Thx to ATCOs from all over the world: Luis Barbero, Pavol Sitar, Tom Laursen, Anthony Ang, Nadia Bamowongo, Angel Augusto, Anicet Coffie, Jasser Letaief, Timothy Agaba, Kijeon, Navneet Singh Rana, Ivan Radović, Osman Atilla Altintas...
 
 You are a Tech guy?
 Join the movement, and imagine what the future of Air Traffic Control will be...
