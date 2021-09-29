@@ -44,7 +44,7 @@ Please contact: areski.hadjaz@thalesdigital.io to get data access.
 
 ## Installation
 - Clone the repository
-- Run `yarn install` in client and server folder (`./install.sh`)
+- Run `yarn install` in project root, client and server folder (`./install.sh`)
 - Fill the credentials (MapBox Token (/client/src/App/conf.json) and Tracks and Flight Plans AVD Feeder (/server/config/conf.json)
 - Launch `./start-dev.sh`
 
