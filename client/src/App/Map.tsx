@@ -63,7 +63,7 @@ const MIN_ZOOM_TO_DISPLAY_DOTS = 7;
 const MIN_ZOOM_TO_DISPLAY_WAYPOINTS = 7;
 const MIN_ALTITUDE_TO_DISPLAY_LABELS = 5000;
 const MAX_FLIGHTS_TO_DISPLAY_LABELS = 500;
-const MAX_FLIGHTS_FOR_STCA = 500;
+const MAX_FLIGHTS_FOR_STCA = 1000;
 const DEFAULT_LATERAL_SEP = 5; // in NM
 const MAX_LATERAL_SEP = 30; //in NM
 const DEFAULT_VERTICAL_SEP = 1000; // in Feet
@@ -73,9 +73,9 @@ const DEFAULT_WIND_SUF = 50; //in knots
 const MAX_WIND_SUF = 200; //in knots
 
 const INITIAL_VIEW_STATE = {
-  longitude: 3,
-  latitude: 49.5,
-  zoom: 6,
+  longitude: 18,
+  latitude: 16,
+  zoom: 2,
   maxZoom: 12,
   minZoom: 2,
   pitch: 0, // pitch in degrees
@@ -332,9 +332,7 @@ export const Map: React.FunctionComponent<MapProps> = (props) => {
       })
       updateBounds(vs);
     }
-    else
-      updateBounds({ swLat: 35, swLon: -8, neLat: 55, neLon: 10 });
-
+    
 
     let showFIR = false;
     if ('filters' in localStorage) {
@@ -426,15 +424,14 @@ export const Map: React.FunctionComponent<MapProps> = (props) => {
 
   async function computeConflictsAndGreen() {
     let f = flightsAVDRef.current;
+    console.log("Compute Conflicts");
 
-    if ((STCAVisibleRef.current || WindAdvisoryVisibleRef.current)&& flightsAVDRef.current.filter(flight => flight.internal && flight.altitude > MIN_ALTITUDE_TO_DISPLAY_LABELS && flight.altitude <= 100 * levelFilterRef.current[1] && flight.altitude >= 100 * levelFilterRef.current[0]).length <= MAX_FLIGHTS_FOR_STCA) {
-      console.log("Compute Conflicts");
-
+    if ((STCAVisibleRef.current || WindAdvisoryVisibleRef.current) && f.filter(flight => flight.altitude > MIN_ALTITUDE_TO_DISPLAY_LABELS && flight.altitude <= 100 * levelFilterRef.current[1] && flight.altitude >= 100 * levelFilterRef.current[0]).length <= MAX_FLIGHTS_FOR_STCA) {
       for (let i = 0; i < f.length - 1; i++) {
         if (freezeRef.current)
           break;
 
-        if (f[i].internal && f[i].altitude > MIN_ALTITUDE_TO_DISPLAY_LABELS && f[i].altitude <= 100 * levelFilterRef.current[1] && f[i].altitude >= 100 * levelFilterRef.current[0]) {
+        if (f[i].altitude > MIN_ALTITUDE_TO_DISPLAY_LABELS && f[i].altitude <= 100 * levelFilterRef.current[1] && f[i].altitude >= 100 * levelFilterRef.current[0]) {
 
           if (WindAdvisoryVisibleRef.current) {
             if (f[i].groundSpeed && f[i].groundSpeed > 0 &&
@@ -466,6 +463,15 @@ export const Map: React.FunctionComponent<MapProps> = (props) => {
 
       setFlightsAVD(f);
       return true;
+    }
+    else if (f.filter(flight => flight.conflict && flight.conflict.length>0).length >0)
+    {
+      for (let i = 0; i < f.filter(flight => flight.conflict && flight.conflict.length>0).length; i++) {
+        f.filter(flight => flight.conflict && flight.conflict.length>0)[i].conflict = [];
+        f.filter(flight => flight.conflict && flight.conflict.length>0)[i].windeffect = false;
+      }
+      setFlightsAVD(f);
+      return true;     
     }
     return false;
   }
@@ -1004,8 +1010,8 @@ export const Map: React.FunctionComponent<MapProps> = (props) => {
           getStrokeWidth: d => 1,
           getSourcePosition: d => [d.longitude, d.latitude, D3Ref.current ? d.altitude : 0],
           getTargetPosition: d => [parseFloat(d.ades_lng), parseFloat(d.ades_lat)],
-          getSourceColor: d => [d.selected ? 0 : 73, d.selected ? 255 : 214, d.selected ? 0 : 249, (TracksVisibleRef.current && (d.selected || (currentHover && d.icaoAddress === currentHover.object.icaoAddress))) ? 255 : 50],//(zoom > MIN_ZOOM_TO_DISPLAY_ROUTES?20:50)],
-          getTargetColor: d => [d.selected ? 0 : 73, d.selected ? 255 : 214, d.selected ? 0 : 249, (TracksVisibleRef.current && (d.selected || (currentHover && d.icaoAddress === currentHover.object.icaoAddress))) ? 255 : 50],//(zoom > MIN_ZOOM_TO_DISPLAY_ROUTES?20:50)],//[Math.sqrt(d.outbound), 140, 0],
+          getSourceColor: d => [d.selected ? 0 : 73, d.selected ? 255 : 214, d.selected ? 0 : 249, (TracksVisibleRef.current && (d.selected || (currentHover && d.icaoAddress === currentHover.object.icaoAddress))) ? 255 : 20],//(zoom > MIN_ZOOM_TO_DISPLAY_ROUTES?20:50)],
+          getTargetColor: d => [d.selected ? 0 : 73, d.selected ? 255 : 214, d.selected ? 0 : 249, (TracksVisibleRef.current && (d.selected || (currentHover && d.icaoAddress === currentHover.object.icaoAddress))) ? 255 : 20],//(zoom > MIN_ZOOM_TO_DISPLAY_ROUTES?20:50)],//[Math.sqrt(d.outbound), 140, 0],
         }));
 
         if (searchItemRef.current.length > 0) {
@@ -1075,7 +1081,7 @@ export const Map: React.FunctionComponent<MapProps> = (props) => {
           //Selection
           map.push(new ScatterplotLayer({
             id: 'FlightAVDSelection',
-            data: flightsAVDRef.current.filter(d => (d.selected || (STCAVisibleRef.current && d.conflict) || (WindAdvisoryVisibleRef.current && d.windeffect) || (currentHover && d.icaoAddress === currentHover.object.icaoAddress)) && getFilters(d)),
+            data: flightsAVDRef.current.filter(d => (d.selected || (STCAVisibleRef.current && d.conflict && d.conflict.length>0) || (WindAdvisoryVisibleRef.current && d.windeffect) || (currentHover && d.icaoAddress === currentHover.object.icaoAddress)) && getFilters(d)),
             pickable: false,
             stroked: true,
             filled: false,
@@ -1084,7 +1090,7 @@ export const Map: React.FunctionComponent<MapProps> = (props) => {
             lineWidthUnits: 'pixels',
             getPosition: d => [d.longitude, d.latitude, D3Ref.current ? d.altitude : 0],
             getRadius: d => 20 + d.altitude / 20,
-            getLineColor: d => (STCAVisibleRef.current && d.conflict) ? [255, 0, 0, 255] : ((WindAdvisoryVisibleRef.current && d.windeffect) ? [0, 255, 0, 255] : ((ruleRef.current && currentHover && d.icaoAddress === currentHover.object.icaoAddress) ? [255, 255, 0, 255] : [73, 214, 249, 255])),//[COLOR[0],COLOR[1],COLOR[2],150],
+            getLineColor: d => (STCAVisibleRef.current && d.conflict && d.conflict.length>0) ? [255, 0, 0, 255] : ((WindAdvisoryVisibleRef.current && d.windeffect) ? [0, 255, 0, 255] : ((ruleRef.current && currentHover && d.icaoAddress === currentHover.object.icaoAddress) ? [255, 255, 0, 255] : [73, 214, 249, 255])),//[COLOR[0],COLOR[1],COLOR[2],150],
             getLineWidth: d => 2,
           }));
 
