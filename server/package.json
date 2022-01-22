@@ -27,7 +27,7 @@
     "minimist": "^1.2.5",
     "moment": "^2.29.1",
     "multer": "^1.4.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "node-geocoder": "^3.25.0",
     "nodemailer": "^6.4.6",
     "normalize-url": "^7.0.2",
