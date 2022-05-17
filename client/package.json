@@ -25,7 +25,7 @@
     "is-mobile": "^2.2.1",
     "mixin-deep": "^2.0.1",
     "mixpanel-browser": "^2.41.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "react": "^16.8.6",
     "react-chartjs-2": "^2.8.0",
     "react-chat-widget": "^3.0.0",
