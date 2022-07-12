@@ -27,7 +27,7 @@
 import { ServiceContext } from "./ServerKit";
 import leveldown from "leveldown";
 import { Hexastore } from '../hexastore/Hexastore';
-import moment from "moment";
+//import moment from "moment";
 import { FileIO } from "../FileIO";
 
 const conf = FileIO.loadJSONData('./config/conf.json');
@@ -169,7 +169,7 @@ export class ServerAuth {
       return;
     }
 
-    this.logUsers();
+    //this.logUsers();
     
     // Issues a new token
 
@@ -272,7 +272,7 @@ export class ServerAuth {
   }
 
 
-  async authWithCode(cxt: ServiceContext, res) {
+  /*async authWithCode(cxt: ServiceContext, res) {
     const { body } = cxt;
     const { email, code } = body;
 
@@ -316,7 +316,7 @@ export class ServerAuth {
       });
       res.status(401, 'Forbidden').send();
     }
-  }
+  }*/
 
   async clearOneTimeCode(email: string) {
     const tx = this.oneTimeStore.newTransaction();
@@ -382,14 +382,14 @@ export class ServerAuth {
           this.getPwd(cxt, res);
         }
       },
-      {
+      /*{
         // http://localhost:4001/api/auth-code
         path: '/auth-code',
         method: 'POST',
         action: (cxt: ServiceContext, res) => {
           this.authWithCode(cxt, res);
         },
-      },
+      },*/
       {
         // http://localhost:4001/api/verify-token
         path: '/verify-token',
