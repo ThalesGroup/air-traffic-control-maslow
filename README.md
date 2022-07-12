@@ -5,7 +5,7 @@ The idea of getting everyone talking and building an Air Traffic Control platfor
      alt="Air-Traffic-Control.io Thumbnail"
      style="float: left; margin-right: 10px;" />
      
-**MasLow** is the foundation on which https://air-traffic-control.io is built. An Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. 
+**MasLow** is the foundation on which air-traffic-control.io (https://bit.ly/3Hrc7zs) is built. An Open Source platform intending to build the future of ATC, and this can only happen starting from scratch, jointly with most open-minded and motivated people. 
 
 
 Special Thx to ATCOs from all over the world: Luis Barbero, Pavol Sitar, Tom Laursen, Anthony Ang, Nadia Bamowongo, Angel Augusto, Anicet Coffie, Jasser Letaief, Timothy Agaba, Kijeon, Navneet Singh Rana, Ivan Radović, Osman Atilla Altintas...
@@ -26,8 +26,6 @@ Server Side:
 "avdClientId": "<THALES_AVIATION_DATA_CLIENT_ID>",
 "avdClientSecret": "<THALES_AVIATION_DATA_CLIENT_SECRET>"
 
-Please contact: areski.hadjaz@thalesdigital.io to get data access.
-
 ## Installation
 - Clone the repository
 - Run `yarn install` in project root, client and server folder (`./install.sh`)
@@ -36,7 +34,7 @@ Please contact: areski.hadjaz@thalesdigital.io to get data access.
 
 ## Questions?
 In case of MasLow related questions:
-- Have a look at the live ATC Platform https://air-traffic-control.io
+- Have a look at the live ATC Platform https://bit.ly/3Hrc7zs
 - Contact me
   - Email: [areski.hadjaz@thalesdigital.io](mailto:areski.hadjaz@thalesdigital.io)
   - LinkedIn: https://www.linkedin.com/in/areskihadjaz/ 
